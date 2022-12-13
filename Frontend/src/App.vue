@@ -14,7 +14,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #30502c;
 }
 
 nav {
@@ -27,6 +27,11 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #4863A0;
+}
+
+nav a:hover{
+  transition-duration: 0.25s;
+  color: #F5FFFA;
 }
 </style>

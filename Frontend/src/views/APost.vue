@@ -1,7 +1,7 @@
 <template>
   <div class="A Post">
     <div id="form">
-      <h3>A Post</h3>
+      <h3>{{post.title}}</h3>
       <label for="title">Title: </label>
       <input name="type" type="text" id="title" required v-model="post.title" />
       <label for="body">Body: </label>
@@ -9,7 +9,7 @@
       <label for="url">Url: </label>
       <input name="url" type="text" id="url" required v-model="post.urllink" />
     </div>
-    <div>
+    <div class="buttons">
       <button @click="updatePost" class="updatePost">Update Post</button>
       <button @click="deletePost" class="deletePost">Delete Post</button>
     </div>
@@ -91,17 +91,17 @@ export default {
 #form {
   max-width: 420px;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: #98AFC7;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
 }
 h3 {
   text-align: center;
-  color: rgb(8, 110, 110);
+  color: #2c3e50;
 }
 label {
-  color: rgb(8, 110, 110);
+  color: #F5FFFA;
   display: inline-block;
   margin: 25px 0 15px;
   font-size: 0.8em;
@@ -116,14 +116,31 @@ input {
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid white;
-  color: blue;
+  color: #2c3e50;
 }
 button {
-  background: rgb(8, 110, 110);
+  background: #2c3e50;
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
-  color: white;
+  color: #F5FFFA;
   border-radius: 20px;
+}
+.buttons{
+  display:flex;
+  flex-direction: row;
+  margin-left: 36%;
+  margin-right: 36%;
+  justify-content: space-between;
+}
+
+.updatePost:hover{
+  transition-duration: 0.25s;
+  background: #64E986;
+}
+.deletePost:hover{
+  transition-duration: 0.25s;
+  background: #F75D59;
+
 }
 </style>

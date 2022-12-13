@@ -55,17 +55,17 @@ SignUp() {
 .form {
   max-width: 420px;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: #98AFC7;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
 }
 h3 {
   text-align: center;
-  color: rgb(8, 110, 110);
+  color: #2c3e50;
 }
 label {
-  color: rgb(8, 110, 110);
+  color: #F5FFFA;
   display: inline-block;
   margin: 25px 0 15px;
   font-size: 0.8em;
@@ -80,10 +80,10 @@ input {
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid white;
-  color: blue;
+  color: #2c3e50;
 }
 button {
-  background: rgb(8, 110, 110);
+  background: #2c3e50;
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
@@ -91,5 +91,10 @@ button {
   border-radius: 20px;
   align-items: center;
   text-align: center;
+}
+button:hover{
+  transition-duration: 0.25s;
+  background-color: #F5FFFA;
+  color:#2c3e50
 }
 </style>
