@@ -106,11 +106,11 @@ body{
   border-radius: 10px;
 }
 .item{
-  padding-left: 15%;
-  padding-right: 15%;
   margin-left: 31%;
   margin-right: 31%;
   margin-top: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
   border-radius: 10px;
   background-color: #98AFC7;
   text-align: center;
