@@ -4,21 +4,21 @@
     <button v-if = "authResult" @click="Logout" class="center">Logout</button>
     </div>
     <div id="post-list">
-    <h1>All Posts</h1>
+    <h1 class="allposts">All Posts</h1>
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
           <!-- / We are putting an anchor for each post, when we click on it, we will be directed to the specific post view (/apost/) /  -->
           <a class="singlepost" :href="'/api/apost/' + post.id">
-            <span class="title"> <b>Title:</b> {{ post.title }} </span><br />
-            <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
-            <span class="url"> <b>Url:</b> {{ post.urllink }} </span> <br />
+            <span class="title"> {{ post.title }} </span><br />
+            <span class="body"> {{ post.body }} </span> <br />
+            <span class="url"> {{ post.urllink }} </span> <br />
           </a>
         </div>
       </ul>
     </div>
-    <div id="add-and-delete-post">
-      <button v-if = "authResult" @click="goToAddPost" class="post-button">Add post</button>
-      <button v-if = "authResult" @click="DeleteAll" class="post-button">Delete all</button>
+    <div class="add-and-delete-post">
+      <button v-if = "authResult" @click="goToAddPost" class="add-button">Add post</button>
+      <button v-if = "authResult" @click="DeleteAll" class="delete-button">Delete all</button>
     </div>
   </div>
 </template>
@@ -105,6 +105,16 @@ body{
   padding: 3px 5px;
   border-radius: 10px;
 }
+.item{
+  margin-left: 31%;
+  margin-right: 31%;
+  margin-top: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  border-radius: 10px;
+  background-color: #98AFC7;
+  text-align: center;
+}
 h3{
     margin: 0;
   padding: 0;
@@ -119,7 +129,8 @@ h1, h2, h3, h4, ul, li, a, input, label, button, div, footer{
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  color: #444;
+  color: #2c3e50;
+  margin-bottom: 1%
 }
 nav{
   display: flex;
@@ -141,24 +152,16 @@ label{
 button{
   margin-top: 30px;
   border-radius: 36px;
-  background: #FEE996;
+  background: #2c3e50;
   border:0;
   font-weight: 700;
   font-size: 0.8em;
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
+  color: #F5FFFA;
 }
-button #post-button{
-  background: rgb(8, 110, 110);
-  border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
-  color: white;
-  border-radius: 20px;
-  align-items: center;
-  text-align: center;
-}
+
 nav{
   display: flex;
   align-items: center;
@@ -170,6 +173,7 @@ nav{
     margin: 10px auto;
     border: 1px solid gray;
     text-align: left;
+    background: #796dbd;
 }
 .center {
   margin: auto;
@@ -182,5 +186,42 @@ nav{
 .container {
   display: flex;
   justify-content: center;
+}
+.add-and-delete-post{
+  display:flex;
+  flex-direction: row;
+  margin-left: 31%;
+  margin-right: 31%;
+  justify-content: space-between;
+}
+
+.title{
+  font-weight:bold;
+  
+}
+.allposts{
+  margin-bottom: 3%
+}
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  transition-duration: 0.25s;
+  color:#F5FFFA
+}
+
+.add-button:hover{
+  transition-duration: 0.25s;
+  background: #64E986;
+}
+.delete-button:hover{
+  transition-duration: 0.25s;
+  background: #F75D59;
+
+}
+.center:hover{
+  transition-duration: 0.25s;
+  background: #98AFC7;
 }
 </style>
